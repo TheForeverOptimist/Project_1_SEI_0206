@@ -17,3 +17,9 @@ body{
         background-position: center;
         background-repeat: no-repeat;
     }
+
+#gif {
+    position: relative;
+    left: -400px;
+    top: 0;
+}
