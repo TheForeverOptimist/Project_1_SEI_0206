@@ -32,17 +32,47 @@ function moveGif() {
     if(xPosition >= 1460) {
         cancelAnimationFrame(animation);
         moveIt = false;
+        strikeBall.style.display = "block"; //show the swing button
     } else {
         animation = requestAnimationFrame(moveGif);
     }
     }
-    document.getElementById("strikeBall").addEventListener("click", function(){
-        if(!moveIt) {
-            moveIt = true;
-            animation = requestAnimationFrame(moveGif);
-            // moveGif();
-        }else {
-            cancelAnimationFrame(animation);
-            moveIt = false;
+    function playGif(){
+    if(!moveIt && xPosition < 1460){
+        moveIt = true;
+        animation = requestAnimationFrame(moveGif);
+    }
+    }
+    function pauseGif(){
+        cancelAnimationFrame(animation);
+        moveIt = false;
+        xPosition = 1460;
+        yPosition = 0;
+        gif.style.left = xPosition + "px";
+        gif.style.top = yPosition + "px";
+    }
+    myButton.addEventListener("click", function(){
+        playGif();
+    });
+
+    strikeBall.addEventListener("click", function() {
+        if (!moveIt){
+            playGif();
+            setTimeout(function(){
+                strikeBall.style.display = "none"; //hide the swing button
+            }, 1000);
+            }else{
+                pauseGif();
         }
     });
+        
+    // document.getElementById("strikeBall").addEventListener("click", function(){
+    //     if(!moveIt) {
+    //         moveIt = true;
+    //         animation = requestAnimationFrame(moveGif);
+    //         // moveGif();
+    //     }else {
+    //         cancelAnimationFrame(animation);
+    //         moveIt = false;
+    //     }
+    // });

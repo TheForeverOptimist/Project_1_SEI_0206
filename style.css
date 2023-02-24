@@ -34,3 +34,13 @@ body{
     top: 150px;
     transform: translateY(10%);
 }
+
+#ball {
+    position: relative;
+    top: 105px;
+    left: 26%;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    transition: all 1s ease-out;
+}
