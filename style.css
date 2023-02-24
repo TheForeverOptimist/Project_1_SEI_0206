@@ -35,7 +35,7 @@ body{
     transform: translateY(10%);
 }
 
-#ball {
+.ball {
     position: relative;
     top: 105px;
     left: 26%;

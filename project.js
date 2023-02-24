@@ -1,5 +1,10 @@
 const myButton = document.getElementById("myButton");
-const strikeBall = document.getElementById("strikeBall");
+// const strikeBall = document.getElementById("strikeBall");
+const golfBall = document.querySelector('.ball');
+const distance = 1000; //distance to hit the ball
+const interval = 10; //change motion in miliseconds
+const sizeChange = 0.5; //amount to reduce size by each movement
+const opacityChange = 0.05; //amount to reduce opacity by
 
 myButton.addEventListener("click", function(){
     myButton.style.display = "none";
@@ -55,24 +60,29 @@ function moveGif() {
         playGif();
     });
 
-    strikeBall.addEventListener("click", function() {
-        if (!moveIt){
-            playGif();
-            setTimeout(function(){
-                strikeBall.style.display = "none"; //hide the swing button
-            }, 1000);
-            }else{
-                pauseGif();
-        }
-    });
-        
-    // document.getElementById("strikeBall").addEventListener("click", function(){
-    //     if(!moveIt) {
-    //         moveIt = true;
-    //         animation = requestAnimationFrame(moveGif);
-    //         // moveGif();
-    //     }else {
-    //         cancelAnimationFrame(animation);
-    //         moveIt = false;
+    // strikeBall.addEventListener("click", function() {
+    //     if (!moveIt){
+    //         playGif();
+    //         setTimeout(function(){
+    //             strikeBall.style.display = "none"; //hide the swing button
+    //         }, 1000);
+    //         }else{
+    //             pauseGif();
     //     }
     // });
+        
+    const strikeBall = document.getElementById("strikeBall");
+    strikeBall.addEventListener("click", function(){
+       const moveBall = setInterval(function(){
+        if(distance <= 0){
+            clearInterval(moveBall);
+        }else {
+            golfBall.style.transform = 'translate(0, -' + distance + 'px)';
+            golfBall.style.width = golfBall.offsetWidth * 0.5 + 'px';
+            golfBall.style.height = golfBall.offsetHeight * 0.5 + 'px';
+            golfBall.style.opacity -= 0.05;
+            golfBall.style.transform += 'rotate (20deg)';
+            distance -= 10;
+        }
+       }, 50);
+    });
