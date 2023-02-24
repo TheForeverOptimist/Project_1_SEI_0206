@@ -20,6 +20,7 @@ const gif = document.getElementById("gif");
 let xPosition = 0;
 let yPosition = 0;
 let moveIt = false;
+let animation = null;
 
 function moveGif() {
     xPosition += 5;
@@ -29,15 +30,19 @@ function moveGif() {
 
     //check if gif reached center
     if(xPosition >= 1460) {
-        cancelAnimationFrame(moveGif);
+        cancelAnimationFrame(animation);
         moveIt = false;
     } else {
-        requestAnimationFrame(moveGif);
+        animation = requestAnimationFrame(moveGif);
     }
     }
-    document.getElementById("myButton").addEventListener("click", function(){
+    document.getElementById("strikeBall").addEventListener("click", function(){
         if(!moveIt) {
             moveIt = true;
-            moveGif();
+            animation = requestAnimationFrame(moveGif);
+            // moveGif();
+        }else {
+            cancelAnimationFrame(animation);
+            moveIt = false;
         }
     });
