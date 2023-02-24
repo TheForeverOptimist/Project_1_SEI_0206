@@ -9,13 +9,18 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class = "golf">;</div>
-        <div class="yards">0</div>
-        <div class="start-screen">Press Any key to Swing!</div>
-        <img src="https://media.discordapp.net/attachments/1067565429771481131/1078049557826523196/drivingrange.png" class="landscape">
-        <img src="https://media.discordapp.net/attachments/1067565429771481131/1078049776878227528/golfer.gif" class="golfergif">
-        <img src="https://media.discordapp.net/attachments/1067565429771481131/1078068319065743450/orangegolfball_-_Edited.png?width=1102&height=1102" alt="" class="golfball">
-
+    
+    <div class = "golf">;
+        <div id="scoreboard">
+            <p>Player 1 Score: <span id="player1-score">0</span></p>
+            <p>Player 2 Score: <span id="player2-score">0</span></p>
+            <p>Winner: <span id="winner">-</span></p>
+        </div>
+        <div id="welcome">
+            <button id="myButton">Begin Game!</button>
+        </div>
+        <img src="https://media.discordapp.net/attachments/1067565429771481131/1078049776878227528/golfer.gif" class="gif">
+    </div>
 
 </body>
 </html>
