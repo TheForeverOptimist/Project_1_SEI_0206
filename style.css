@@ -12,14 +12,15 @@
     left: 50%;
 }
 body{
-       background-image: url("https://media.discordapp.net/attachments/1067565429771481131/1078704734535438496/drivingrange_-_Edited.png");
+       background-image: url("https://media.discordapp.net/attachments/1067565429771481131/1078724119492837446/Landscape.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
 
 #gif {
+    /* display: none; */
     position: relative;
     left: -400px;
-    top: 0;
+    top: 150px;
 }
