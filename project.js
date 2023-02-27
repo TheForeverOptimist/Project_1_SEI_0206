@@ -5,6 +5,9 @@ const distance = 1000; //distance to hit the ball
 const interval = 10; //change motion in miliseconds
 const sizeChange = 0.5; //amount to reduce size by each movement
 const opacityChange = 0.05; //amount to reduce opacity by
+const canvas = document.querySelector('canvas1');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 myButton.addEventListener("click", function(){
     myButton.style.display = "none";
